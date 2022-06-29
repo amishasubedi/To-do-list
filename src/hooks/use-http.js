@@ -12,9 +12,9 @@ const useHttp = (requestConfig, applyData) => {
         //"https://to-do-list-67ef1-default-rtdb.firebaseio.com/tasks.json"
         requestConfig.url,
         {
-          method: requestConfig.method,
-          headers: requestConfig.headers,
-          body: JSON.stringify(requestConfig.body),
+          method: requestConfig.method ? requestConfig.method : "GET",
+          headers: requestConfig.headers ? requestConfig.headers : "",
+          body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
         }
       );
 
